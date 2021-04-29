@@ -23,7 +23,8 @@ function refreshskin()
   SetPlayerModel(PlayerId(), model)
   SetModelAsNoLongerNeeded(model)
   ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
-                TriggerEvent('skinchanger:loadSkin', skin)
+    TriggerEvent('skinchanger:loadSkin', skin)
+  end)
 end
 
 ---COMMAND
