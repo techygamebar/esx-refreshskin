@@ -5,5 +5,5 @@ description 'Refresh Skin Command ESX'
 
 author 'LEGEND|TGB#1058'
 
-client_script 'client.lua'
+client_script 'main.lua'
 client_script 'config.lua'
