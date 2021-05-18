@@ -10,7 +10,10 @@ end)
 
 -- FUNCTION
 function refreshskin()
-
+  local playerPed = PlayerPedId()
+  local maxhealth = GetEntityMaxHealth(playerPed)
+  local health = GetEntityHealth(playerPed)
+  
   local model, sex, fullSkin = nil
 
   TriggerEvent('skinchanger:getSkin', function(skin) sex = skin.sex fullSkin = skin end)
@@ -26,6 +29,10 @@ function refreshskin()
   SetPlayerModel(PlayerId(), model)
   SetModelAsNoLongerNeeded(model)
   TriggerEvent('skinchanger:loadSkin', fullSkin)
+   SetPedMaxHealth(PlayerId(), maxhealth)
+   Citizen.Wait(1000) 
+  SetEntityHealth(PlayerPedId(), health)
+
 end
 ---COMMAND
 RegisterCommand("refreshskin", function()
