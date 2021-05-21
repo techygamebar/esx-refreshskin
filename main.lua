@@ -13,8 +13,8 @@ function refreshskin()
   local playerPed = PlayerPedId()
   local maxhealth = GetEntityMaxHealth(playerPed)
   local health = GetEntityHealth(playerPed)
-  
-  local model, sex, fullSkin = nil
+   local model, sex, fullSkin = nil
+ local wep = GetSelectedPedWeapon(playerPed)
 
   TriggerEvent('skinchanger:getSkin', function(skin) sex = skin.sex fullSkin = skin end)
   
